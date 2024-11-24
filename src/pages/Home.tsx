@@ -3,6 +3,9 @@ import { Typography, Card, CardContent, CardMedia, Box } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 import { IPost } from "../models/PostModels";
 import { fetchPosts } from "../services/PostServices";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store/reducers";
+import { fetchPostsStart } from "../store/slices/postSlice";
 
 const useStyles = makeStyles()((theme) => ({
   root: {
@@ -37,16 +40,15 @@ const useStyles = makeStyles()((theme) => ({
 }));
 
 const Home: React.FC = () => {
+  const dispatch = useDispatch();
   const { classes } = useStyles();
-  const [posts, setPosts] = useState<IPost[]>([]);
+  const { posts, loading, error } = useSelector(
+    (state: RootState) => state.posts
+  );
 
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchPosts();
-      setPosts(data);
-    };
-    fetchData();
-  }, []);
+    dispatch(fetchPostsStart());
+  }, [dispatch]);
 
   return (
     <Box className={classes.root}>
@@ -54,7 +56,7 @@ const Home: React.FC = () => {
         Posts
       </Typography>
       <Box className={classes.postContainer}>
-        {posts.map((post) => (
+        {posts?.map((post) => (
           <Box key={post.id} className={classes.postBox}>
             <Card className={classes.card}>
               <CardMedia
