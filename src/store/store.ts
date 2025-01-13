@@ -12,7 +12,7 @@ const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware),
-  devTools: true // Enable Redux DevTools
+  devTools: true, // Enable Redux DevTools
 });
 
 // Run the root saga

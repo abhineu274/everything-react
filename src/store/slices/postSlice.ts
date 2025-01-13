@@ -1,6 +1,7 @@
 // slices/postSlice.ts
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAction, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IPost } from "../../models/PostModels";
+import { PostForm } from "../../pages/CreatePost";
 
 interface PostState {
   posts: IPost[];
@@ -13,6 +14,7 @@ const initialState: PostState = {
   loading: false,
   error: null,
 };
+export const createPostAction = createAction<PostForm>("posts/createPost");
 
 const postSlice = createSlice({
   name: "posts",

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Typography, Card, CardContent, CardMedia, Box } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
-import { IPost } from "../models/PostModels";
-import { fetchPosts } from "../services/PostServices";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/reducers";
 import { fetchPostsStart } from "../store/slices/postSlice";
