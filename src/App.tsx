@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
 import Header from "./pages/Header";
 import store from "./store/store";
+import { Recursion } from "./pages/Recursion/Recursion";
+import { DebounceThrottle } from "./pages/DebounceThrottle/DebounceThrottle";
 
 const App: React.FC = () => {
   return (
@@ -17,6 +19,8 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/create" element={<CreatePost />} />
+            <Route path="/recursion" element={<Recursion />} />
+            <Route path="/debounce-throttle" element={<DebounceThrottle />} />
           </Routes>
         </Container>
       </Router>
