@@ -1,0 +1,21 @@
+useInsertionEffect Hook : 
+    The useInsertionEffect hook is a React hook that is used for injecting styles into the DOM before any other DOM mutations occur. 
+    This makes it particularly useful for CSS-in-JS libraries or any scenario where you need to ensure that styles are applied before the browser paints the screen.
+
+useId Hook : 
+    Generates a unique ID for use in components.
+    Useful for accessibility and associating elements.
+    Ensures IDs are unique across the entire React app.
+
+const MyComponent = () => {
+  const id = useId();
+
+  return (
+    <div>
+      <label htmlFor={id}>Name:</label>
+      <input id={id} type="text" />
+    </div>
+  );
+};
+
+
