@@ -72,6 +72,7 @@ Javascript first does the memory creation and then goes to code execution.
 
     const x = 5;
     console.log(x); // 5
+    x = 10; // TypeError: Assignment to constant variable.
     const x = 10; // SyntaxError: Identifier 'x' has already been declared
 
 - Generators :

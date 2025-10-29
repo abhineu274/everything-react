@@ -126,4 +126,8 @@ String Methods :
         var newStr = str.toLowerCase(); // "hello world"
     - toUpperCase() :
         var newStr = str.toUpperCase(); // "HELLO WORLD"
+
+
+    **** TO REVERSE A STRING ****
+        var reversedStr = str.split("").reverse().join(""); // "dlroW olleH"
 */

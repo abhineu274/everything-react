@@ -68,4 +68,101 @@ typeof {}; // object
 typeof ''; // string
 typeof 1; // number
 
+
+
+
+
+
+
+
+
+****************************CLONING - DEEP VS SHALLOW****************************
+
+
+
+
+
+
+
+
+
+
+******************************CURRING **********************************************
+FUN()() -> FUN(FUN2())
+
+
+
+
+
+
+
+******************************ARROW FUNCTION VS NORMAL FUNCTION******************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************this KEYWORD**********************************
+
+
+
+
+
+
+
+
+
+
+
+
+*****************************OBJECT********************************************
+const obj = {
+    key: 'value',
+    key2: 'value2',
+    method: function() {
+        console.log(this.key);
+    }
+};
+
+Object.keys(obj); // ['key', 'key2', 'method']
+Object.values(obj); // ['value', 'value2', function() {...}]
+Object.entries(obj); // [['key', 'value'], ['key2', 'value2'], ['method', function() {...}]]
+
+Object.assign({}, obj); // shallow copy of obj
+const newObj = {...obj}; // shallow copy of obj
+
+Object.freeze(obj); // makes the object immutable
+
+JSON.stringify(obj); // converts object to JSON string
+JSON.parse(JSON.stringify(obj)); // deep copy of obj
+
+for (let key in obj) {
+    console.log(key, obj[key]); // key value
+}
+for (let [key, value] of Object.entries(obj)) {
+    console.log(key, value); // key value
+    if (typeof value === 'function') {
+        value.call(obj); // to call the method with the correct this context
+    }
+}
+
+
+
+-call(), apply(), bind() methods:
+1. call() - calls a function with a given this value and arguments provided individually.
+2. apply() - calls a function with a given this value and arguments provided as an array.
+3. bind() - returns a new function, that when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+
+
+
+
 */

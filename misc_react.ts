@@ -76,10 +76,18 @@ to use this custom hook:
 const count = useCustomHook();
 
 how do we call setCount here ?
-- we can return setCount from the custom hook as well. ???
+- we can return setCount from the custom hook as well. ??? - Yes.
+
+const useCustomHook = () => {
+  const [count, setCount] = useState(0);
+  return { count, setCount }; // return both
+};
+
+ const { count, setCount } = useCustomHook();
 
 
-
+What is vite and webpack?
+vite and webpack are both build tools for modern web applications. To build react applications.
 
 vite vs webpack :
 - Vite is faster than Webpack because it uses native ES modules.
@@ -196,4 +204,27 @@ Virtual DOM :
 - React compares the virtual DOM with the actual DOM to minimize updates.
 - React uses a diffing algorithm to update only the changed parts of the DOM.
 
+
+
+for loops : 
+ forEach in react :
+    array.forEach((item) => {
+        // do something with item
+    });
+
+    for(let i = 0; i < array.length; i++) {
+        // do something with array[i]
+    }
+
+    for (const item of array) {
+        // do something with item
+    }
+
+
+useParams : 
+- useParams is a hook that returns an object of key/value pairs of the dynamic params from the current URL that were matched by the <Route path>.
+example:
+
+import { useParams } from "react-router-dom";
+const { id } = useParams();
 */
