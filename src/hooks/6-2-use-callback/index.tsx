@@ -4,6 +4,7 @@ by preventing unnecessary re-creations of functions on every render, especially 
 Used for optimizing performance of functional components by memoizing callback functions.
 Helps to avoid unnecessary re-renders of child components by ensuring that the same function instance is passed as a prop.
 It usually gives no benefit when the function is defined inside the component and not passed to child components.
+Usecallback memoizes the function and whenever there is a change in dependencies it will create a new function.
 */
 
 import React, { useState, useCallback } from "react";

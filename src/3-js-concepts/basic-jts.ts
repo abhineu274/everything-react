@@ -58,6 +58,7 @@ Basics of JavaScript/Typescript/ES6:
     fn(); // John
 
 -Hoisting and Closures work because of the lexical scoping of JavaScript.
+-With Lexical scoping, the inner function has access to the variables and parameters of its outer function, even after the outer function has returned.
 Javascript first does the memory creation and then goes to code execution.
 
 -var, let, const and hoisting:
